@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.ItemSellingAnalysisController">
+   <children>
+      <Label alignment="CENTER" layoutX="441.0" layoutY="38.0" text="Chart of Items Sold" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <AreaChart fx:id="chartSales" layoutX="41.0" layoutY="60.0" prefHeight="261.0" prefWidth="891.0" stylesheets="@asserts/style/chart.css">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </AreaChart>
+      <TableView fx:id="tblItemSelling" layoutX="50.0" layoutY="398.0" prefHeight="200.0" prefWidth="891.0">
+        <columns>
+          <TableColumn prefWidth="123.0" text="Item Code" />
+          <TableColumn prefWidth="268.0" text="Desc" />
+            <TableColumn prefWidth="116.0" text="Qty on Hand" />
+            <TableColumn prefWidth="128.0" text="Unit Price" />
+            <TableColumn prefWidth="97.0" text="Sold Count" />
+            <TableColumn prefWidth="157.0" text="Total Income" />
+        </columns>
+      </TableView>
+      <Label layoutX="50.0" layoutY="357.0" text="Most Moveble Item    :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblMostMovableItem" layoutX="186.0" layoutY="357.0" prefHeight="17.0" prefWidth="54.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="297.0" layoutY="357.0" text="Least Moveble Item    :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLeastMovableItem" layoutX="433.0" layoutY="357.0" prefHeight="17.0" prefWidth="54.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="519.0" layoutY="357.0" prefHeight="17.0" prefWidth="128.0" text="All Items Variations  :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAllItemVariations" layoutX="645.0" layoutY="357.0" prefHeight="17.0" prefWidth="54.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/chart.css" />
+      <URL value="@asserts/style/table.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnMain" prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.IncomeFormController">
+   <children>
+      <Label fx:id="lblAccountType" alignment="CENTER" layoutX="398.0" layoutY="33.0" prefHeight="17.0" prefWidth="189.0" text="INCOME REPORTS" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <JFXDatePicker fx:id="dpckrSelectDate" layoutX="360.0" layoutY="99.0" prefHeight="25.0" prefWidth="227.0" promptText="Select date" />
+      <JFXComboBox fx:id="cmbSeason" layoutX="63.0" layoutY="99.0" prefHeight="25.0" prefWidth="201.0" promptText="Select Season" styleClass="combo-box" />
+      <JFXComboBox fx:id="cmbSelectMonth" layoutX="360.0" layoutY="149.0" prefHeight="25.0" prefWidth="227.0" promptText="Select Month" styleClass="textField" />
+      <JFXComboBox fx:id="cmbSelectYear" layoutX="360.0" layoutY="99.0" prefHeight="25.0" prefWidth="227.0" promptText="Select Year" styleClass="textField" />
+      <Label layoutX="63.0" layoutY="164.0" prefHeight="19.0" prefWidth="114.0" text="Total Income      :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblIncome" layoutX="184.0" layoutY="164.0" prefHeight="19.0" prefWidth="114.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <AreaChart fx:id="chartIncome" layoutX="27.0" layoutY="199.0" prefHeight="380.0" prefWidth="908.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+      <AnchorPane fx:id="apnTable" layoutX="23.0" layoutY="215.0" prefHeight="397.0" prefWidth="940.0">
+         <children>
+            <TableView fx:id="tblOrders" editable="true" layoutX="16.0" prefHeight="370.0" prefWidth="908.0">
+              <columns>
+                <TableColumn prefWidth="115.0" text="Order ID" />
+                <TableColumn prefWidth="114.0" text="Date" />
+                  <TableColumn prefWidth="111.0" text="Customer ID" />
+                  <TableColumn prefWidth="235.0" text="Customer Name" />
+                  <TableColumn prefWidth="182.0" text="Customer City" />
+                  <TableColumn prefWidth="149.0" text="Total" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="btnTable_Chart" layoutX="697.0" layoutY="371.0" onAction="#switchTable_ChartOnAction" prefHeight="19.0" prefWidth="227.0" style="-fx-background-color: #232323;" styleClass="common-button" text="Go to Table View">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/button.css" />
+      <URL value="@asserts/style/table.css" />
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/cmb.css" />
+      <URL value="@asserts/style/chart.css" />
+   </stylesheets>
+</AnchorPane>

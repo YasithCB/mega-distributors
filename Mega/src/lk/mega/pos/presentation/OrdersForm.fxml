@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnPlaceOrder" prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.OrdersFormController">
+   <children>
+      <Label layoutX="54.0" layoutY="52.0" text="Customer Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="387.0" layoutY="52.0" text="Item Details" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbItemCode" layoutX="387.0" layoutY="100.0" prefHeight="25.0" prefWidth="211.0" promptText="Item Code" />
+      <Label layoutX="387.0" layoutY="145.0" prefHeight="17.0" prefWidth="85.0" text="Description     :" textFill="WHITE" />
+      <Label layoutX="387.0" layoutY="180.0" prefHeight="17.0" prefWidth="85.0" text="Pack Size        :" textFill="WHITE" />
+      <Label layoutX="387.0" layoutY="215.0" prefHeight="17.0" prefWidth="85.0" text="Unit Price       :" textFill="WHITE" />
+      <Label layoutX="387.0" layoutY="250.0" prefHeight="17.0" prefWidth="85.0" text="Qty On Hand :" textFill="WHITE" />
+      <Label fx:id="lblDesc" layoutX="472.0" layoutY="145.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label fx:id="lblPackSize" layoutX="472.0" layoutY="180.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label fx:id="lblUnitPrice" layoutX="472.0" layoutY="215.0" prefHeight="17.0" prefWidth="126.0" text="0" textFill="WHITE" />
+      <Label fx:id="lblQtyOnHand" layoutX="472.0" layoutY="250.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <JFXTextField fx:id="txtOrderQty" focusColor="#c3c3c3" labelFloat="true" layoutX="387.0" layoutY="292.0" onKeyReleased="#txtOrderQtyOnKeyReleased" prefHeight="25.0" prefWidth="104.0" promptText="Order Qty" styleClass="textField" text="0" />
+      <JFXTextField fx:id="txtDiscount" focusColor="#c3c3c3" labelFloat="true" layoutX="511.0" layoutY="292.0" onKeyReleased="#txtDiscountOnKeyReleased" prefHeight="25.0" prefWidth="71.0" promptText="Discount (%)" styleClass="textField" text="0" />
+      <Label layoutX="386.0" layoutY="362.0" prefHeight="17.0" prefWidth="97.0" text="Sub Total           :" textFill="WHITE" />
+      <Label fx:id="lblSubTotal" layoutX="487.0" layoutY="362.0" prefHeight="17.0" prefWidth="126.0" text="0.00" textFill="WHITE" />
+      <TableView fx:id="tblCart" layoutX="54.0" layoutY="404.0" prefHeight="196.0" prefWidth="880.0">
+        <columns>
+          <TableColumn prefWidth="113.0" text="Item Code" />
+          <TableColumn minWidth="0.0" prefWidth="198.0" text="Description" />
+            <TableColumn minWidth="0.0" prefWidth="131.0" text="Pack Size" />
+            <TableColumn minWidth="0.0" prefWidth="120.0" text="Unit Price" />
+            <TableColumn minWidth="0.0" prefWidth="116.0" text="Discount" />
+            <TableColumn minWidth="0.0" prefWidth="62.0" text="Qty" />
+            <TableColumn minWidth="0.0" prefWidth="139.0" text="Sub Total" />
+        </columns>
+      </TableView>
+      <Label layoutX="709.0" layoutY="90.0" text="Total    :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="774.0" layoutY="90.0" prefHeight="21.0" prefWidth="176.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="709.0" layoutY="52.0" text="Payment Info" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="706.0" layoutY="183.0" onAction="#viewAllOrdersOnAction" prefHeight="35.0" prefWidth="160.0" styleClass="common-button" text="View All Orders">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="btnConfirmOrder" buttonType="RAISED" layoutX="704.0" layoutY="337.0" onAction="#confirmOrderOnAction" prefHeight="35.0" prefWidth="160.0" styleClass="common-button" text="Confirm Order">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label layoutX="54.0" layoutY="145.0" prefHeight="17.0" prefWidth="85.0" text="Title                :" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="180.0" prefHeight="17.0" prefWidth="85.0" text="Name             :" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="215.0" prefHeight="17.0" prefWidth="85.0" text="Address         :" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="250.0" prefHeight="17.0" prefWidth="85.0" text="City               :" textFill="WHITE" />
+      <Label fx:id="lblCustomerTitle" layoutX="139.0" layoutY="145.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label fx:id="lblCustomerName" layoutX="139.0" layoutY="180.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label fx:id="lblAddress" layoutX="139.0" layoutY="215.0" prefHeight="17.0" prefWidth="146.0" textFill="WHITE" />
+      <Label fx:id="lblCity" layoutX="139.0" layoutY="250.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="283.0" prefHeight="17.0" prefWidth="85.0" text="Province        :" textFill="WHITE" />
+      <Label layoutX="54.0" layoutY="318.0" prefHeight="17.0" prefWidth="85.0" text="Postal Code   :" textFill="WHITE" />
+      <Label fx:id="lblProvince" layoutX="139.0" layoutY="283.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <Label fx:id="lblPostalCode" layoutX="139.0" layoutY="318.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE" />
+      <JFXButton fx:id="btnAddItem" buttonType="RAISED" layoutX="704.0" layoutY="146.0" onAction="#addItemOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="Add Item">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <Label fx:id="lblDiscountValue" layoutX="487.0" layoutY="333.0" prefHeight="17.0" prefWidth="126.0" text="0.00" textFill="WHITE" />
+      <Label layoutX="386.0" layoutY="333.0" prefHeight="17.0" prefWidth="97.0" text="Discount Value  :" textFill="WHITE" />
+      <AnchorPane fx:id="apnOrders" prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;">
+         <children>
+            <TableView fx:id="tblOrders" layoutX="35.0" layoutY="213.0" prefHeight="376.0" prefWidth="919.0">
+              <columns>
+                <TableColumn prefWidth="136.0" text="Order ID" />
+                <TableColumn prefWidth="212.0" text="Date" />
+                  <TableColumn prefWidth="130.0" text="Customer ID" />
+                  <TableColumn prefWidth="162.0" text="Customer Name" />
+                  <TableColumn prefWidth="139.0" text="Customer City" />
+                  <TableColumn prefWidth="139.0" text="Total" />
+              </columns>
+            </TableView>
+            <JFXButton buttonType="RAISED" layoutX="869.0" layoutY="28.0" onAction="#backOnAction" prefHeight="25.0" prefWidth="85.0" styleClass="common-button" text="Back" />
+            <JFXDatePicker fx:id="orderDate" defaultColor="#e7a755" editable="false" layoutX="59.0" layoutY="143.0" prefHeight="25.0" prefWidth="211.0" promptText="Date" styleClass="textField" />
+            <JFXButton fx:id="btnUpdateOrder" buttonType="RAISED" layoutX="289.0" layoutY="143.0" onAction="#btnUpdateOrderOnAction" prefHeight="25.0" prefWidth="126.0" styleClass="common-button" text="Update" />
+            <JFXButton fx:id="btnDeleteOrder" buttonType="RAISED" layoutX="432.0" layoutY="143.0" onAction="#btnDeleteOrderOnAction" prefHeight="25.0" prefWidth="126.0" styleClass="close-button" text="Delete" />
+            <JFXTextField fx:id="txtSearchOrder" labelFloat="true" layoutX="600.0" layoutY="143.0" onKeyReleased="#txtSearchOrderOnKeyReleased" prefHeight="25.0" prefWidth="351.0" promptText="Search" styleClass="textField" />
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="917.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@asserts/image/outline_search_white_24dp.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="840.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@asserts/image/outline_arrow_back_white_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+         <stylesheets>
+            <URL value="@asserts/style/textField.css" />
+            <URL value="@asserts/style/button.css" />
+         </stylesheets>
+      </AnchorPane>
+      <JFXComboBox fx:id="cmbCustomerId" layoutX="54.0" layoutY="100.0" prefHeight="25.0" prefWidth="211.0" promptText="Customer ID" styleClass="combo-box" />
+      <Label layoutX="54.0" layoutY="28.0" prefHeight="17.0" prefWidth="97.0" text="Order ID        : " textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="139.0" layoutY="28.0" prefHeight="17.0" prefWidth="126.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/button.css" />
+      <URL value="@asserts/style/cmb.css" />
+      <URL value="@asserts/style/table.css" />
+   </stylesheets>
+</AnchorPane>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.CustomersFormController">
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/button.css" />
+   </stylesheets>
+   <children>
+      <Label layoutX="74.0" layoutY="72.0" text="Add New Customer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCustName" focusColor="#c3c3c3" labelFloat="true" layoutX="397.0" layoutY="120.0" onKeyReleased="#onKeyRelease" prefHeight="25.0" prefWidth="211.0" promptText="Customer Name" styleClass="textField" />
+      <Label fx:id="lblCustId" alignment="CENTER_RIGHT" layoutX="214.0" layoutY="72.0" prefHeight="17.0" prefWidth="71.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCustAddress" focusColor="#c3c3c3" labelFloat="true" layoutX="693.0" layoutY="120.0" onKeyReleased="#onKeyRelease" prefHeight="25.0" prefWidth="211.0" promptText="Customer Address" styleClass="textField" />
+      <JFXTextField fx:id="txtCity" focusColor="#c3c3c3" labelFloat="true" layoutX="74.0" layoutY="179.0" onKeyReleased="#onKeyRelease" prefHeight="25.0" prefWidth="211.0" promptText="City" styleClass="textField" />
+      <JFXTextField fx:id="txtProvince" focusColor="#c3c3c3" labelFloat="true" layoutX="397.0" layoutY="179.0" onKeyReleased="#onKeyRelease" prefHeight="25.0" prefWidth="211.0" promptText="Province" styleClass="textField" />
+      <JFXTextField fx:id="txtPostalCode" focusColor="#c3c3c3" labelFloat="true" layoutX="693.0" layoutY="179.0" onKeyReleased="#onKeyRelease" prefHeight="25.0" prefWidth="211.0" promptText="Postal Code" styleClass="textField" />
+      <JFXComboBox fx:id="cmbCustTitle" layoutX="74.0" layoutY="120.0" prefHeight="25.0" prefWidth="211.0" promptText="Customer Title">
+         <styleClass>
+            <String fx:value="textField" />
+            <String fx:value="combo-box" />
+         </styleClass></JFXComboBox>
+      <TableView fx:id="tblCustomers" layoutX="54.0" layoutY="280.0" prefHeight="320.0" prefWidth="880.0" stylesheets="@asserts/style/table.css">
+         <columns>
+            <TableColumn prefWidth="102.0" text="Customer ID" />
+            <TableColumn minWidth="0.0" prefWidth="48.0" text="Title" />
+            <TableColumn minWidth="0.0" prefWidth="183.0" text="Name" />
+            <TableColumn minWidth="0.0" prefWidth="183.0" text="Address" />
+            <TableColumn minWidth="0.0" prefWidth="133.0" text="City" />
+            <TableColumn minWidth="0.0" prefWidth="119.0" text="Province" />
+            <TableColumn minWidth="0.0" prefWidth="110.0" text="Postal Code" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnSave_update" buttonType="RAISED" layoutX="74.0" layoutY="234.0" onAction="#btnSave_updateOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="Save">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="252.0" layoutY="234.0" onAction="#deleteOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="close-button" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="744.0" layoutY="62.0" onAction="#addNewOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="New ">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></JFXButton>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="553.0" layoutY="234.0" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="25.0" prefWidth="351.0" promptText="Search" styleClass="textField" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="878.0" layoutY="239.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_search_white_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="712.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_person_add_white_24dp.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.DashboardFormController">
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/button.css" />
+      <URL value="@asserts/style/chart.css" />
+   </stylesheets>
+   <children>
+      <PieChart fx:id="pieChartItemQty" layoutX="38.0" layoutY="191.0" prefHeight="398.0" prefWidth="497.0" styleClass="pie" />
+      <Label layoutX="251.0" layoutY="167.0" text="Item Stock" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="490.0" layoutY="269.0" text="Least qty of the item stock                   :" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblLeastQty" layoutX="714.0" layoutY="269.0" prefHeight="17.0" prefWidth="221.0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="490.0" layoutY="290.0" text="Be ready to update this item stock" textFill="WHITE" />
+      <JFXButton layoutX="490.0" layoutY="337.0" onAction="#goToItemTableOnAction" prefHeight="25.0" prefWidth="376.0" styleClass="common-button" text="Go to Item Table">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2443a" height="82.0" layoutX="26.0" layoutY="33.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fc9b0c" height="82.0" layoutX="263.0" layoutY="33.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2296f4" height="82.0" layoutX="500.0" layoutY="33.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4db052" height="82.0" layoutX="739.0" layoutY="33.0" opacity="0.8" stroke="BLACK" strokeType="INSIDE" width="74.0" />
+      <ImageView fitHeight="82.0" fitWidth="29.0" layoutX="49.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_groups_white_24dp.png" />
+         </image></ImageView>
+      <ImageView fitHeight="82.0" fitWidth="29.0" layoutX="286.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_sell_white_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="29.0" layoutX="523.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_shopping_cart_white_24dp.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="29.0" layoutX="762.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_manage_accounts_white_24dp.png" />
+         </image></ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#404040" height="82.0" layoutX="100.0" layoutY="34.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="138.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#404040" height="82.0" layoutX="337.0" layoutY="34.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="138.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#404040" height="82.0" layoutX="574.0" layoutY="33.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="138.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#404040" height="82.0" layoutX="813.0" layoutY="34.0" opacity="0.3" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="138.0" />
+      <Label layoutX="138.0" layoutY="43.0" text="Customers" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="390.0" layoutY="43.0" text="Items" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="624.0" layoutY="43.0" text="Orders" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomer" layoutX="160.0" layoutY="63.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblItem" layoutX="397.0" layoutY="63.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrder" layoutX="636.0" layoutY="63.0" text="0" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="873.0" layoutY="63.0" text="1" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="864.0" layoutY="43.0" text="Users" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

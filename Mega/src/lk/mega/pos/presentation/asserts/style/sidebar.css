@@ -1,0 +1,10 @@
+.sidebar-btn:hover {
+    -fx-border-color: #E7A755;
+    -fx-border-width: 0px 0px 0px 2px;
+    -fx-background-color: #343434;
+    -fx-text-fill: #FFFFFF;
+}
+
+.sidebar-btn{
+    -fx-text-fill: #a8a8a8;
+}

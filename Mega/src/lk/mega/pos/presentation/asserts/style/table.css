@@ -1,0 +1,45 @@
+
+
+
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-color: #4A4744;
+    -fx-border-width: 0 1 0 1;
+}
+
+/* Spaltenköpfe
+    Struktur column-header-background -> column-header */
+
+.table-view .column-header-background{
+    /*-fx-background-color: linear-gradient(#131313 0%, #424141 100%);*/
+    -fx-background-color: #3F3F3F;
+}
+
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-text-fill: white;
+    -fx-border-color: #4A4744;
+    -fx-border-width: 0 1 0 1;
+}
+
+.table-row-cell{
+    -fx-background-color: -fx-table-cell-border-color, #232323;
+    -fx-border-width: 0 0 0 0 ;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: -fx-table-cell-border-color, #232323;
+    -fx-border-width: 0 0 0 0 ;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #171815;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="630.0" prefWidth="985.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.ItemsFormController">
+   <children>
+      <Pane fx:id="paneForAdmin" layoutX="42.0" layoutY="38.0" prefHeight="233.0" prefWidth="896.0">
+         <children>
+            <Label layoutX="28.0" layoutY="18.0" text="Add New Item" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtDescription" focusColor="#c3c3c3" labelFloat="true" layoutX="28.0" layoutY="53.0" prefHeight="25.0" prefWidth="514.0" promptText="Description" styleClass="textField" />
+            <Label fx:id="lblItemCode" alignment="CENTER_RIGHT" layoutX="131.0" layoutY="18.0" prefHeight="17.0" prefWidth="101.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtPackSize" focusColor="#c3c3c3" labelFloat="true" layoutX="28.0" layoutY="122.0" prefHeight="25.0" prefWidth="211.0" promptText="Pack Size" styleClass="textField" />
+            <JFXTextField fx:id="txtUnitPrice" focusColor="#c3c3c3" labelFloat="true" layoutX="372.0" layoutY="122.0" onKeyReleased="#onKeyReleased" prefHeight="25.0" prefWidth="211.0" promptText="Unit Price" styleClass="textField" />
+            <JFXTextField fx:id="txtQtyOnHand" focusColor="#c3c3c3" labelFloat="true" layoutX="663.0" layoutY="122.0" onKeyReleased="#onKeyReleased" prefHeight="25.0" prefWidth="211.0" promptText="Qty On Hand" styleClass="textField" />
+            <JFXButton fx:id="btnSave_Update" buttonType="RAISED" layoutX="28.0" layoutY="188.0" onAction="#save_UpdateOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="Save">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="205.0" layoutY="188.0" onAction="#deleteOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="Delete">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="714.0" layoutY="23.0" onAction="#newItemOnAction" prefHeight="25.0" prefWidth="160.0" styleClass="common-button" text="New ">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="684.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@asserts/image/outline_person_add_white_24dp.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <JFXTextField fx:id="txtSearch" labelFloat="true" layoutX="567.0" layoutY="225.0" onKeyReleased="#txtSearchOnKeyReleased" prefHeight="25.0" prefWidth="351.0" promptText="Search" styleClass="textField" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="895.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@asserts/image/outline_search_white_24dp.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblItems" layoutX="54.0" layoutY="280.0" prefHeight="320.0" prefWidth="880.0">
+         <columns>
+            <TableColumn prefWidth="111.0" text="Item Code" />
+            <TableColumn minWidth="0.0" prefWidth="392.0" text="Description" />
+            <TableColumn minWidth="0.0" prefWidth="133.0" text="Pack Size" />
+            <TableColumn minWidth="0.0" prefWidth="136.0" text="Unit Price" />
+            <TableColumn minWidth="0.0" prefWidth="107.0" text="Qty On Hand" />
+         </columns>
+      </TableView>
+   </children>
+   <stylesheets>
+      <URL value="@asserts/style/textField.css" />
+      <URL value="@asserts/style/button.css" />
+      <URL value="@asserts/style/table.css" />
+   </stylesheets>
+</AnchorPane>

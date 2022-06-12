@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apnLogin" prefHeight="283.0" prefWidth="443.0" style="-fx-background-color: #232323; -fx-border-color: #E7A755; -fx-border-image-width: 0.1px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.mega.pos.controller.LoginFormController">
+   <children>
+      <Label fx:id="lblSwitchAdmin_User" alignment="CENTER" layoutX="166.0" layoutY="30.0" prefHeight="17.0" prefWidth="111.0" text="Switch to Admin" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="75.0" layoutY="101.0" onKeyReleased="#unOnKeyReleased" prefHeight="25.0" prefWidth="294.0" promptText="User Name" styleClass="textField" />
+      <JFXPasswordField fx:id="pwPassword" labelFloat="true" layoutX="75.0" layoutY="160.0" onKeyReleased="#pwOnKeyReleased" prefHeight="25.0" prefWidth="294.0" promptText="Password" styleClass="textField" />
+      <JFXButton fx:id="btnSwitch" buttonType="RAISED" layoutX="99.0" layoutY="220.0" onAction="#btnSwitchOnAction" prefHeight="25.0" prefWidth="157.0" styleClass="common-button" text="Switch" textFill="#a8a8a8">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClose" buttonType="RAISED" layoutX="272.0" layoutY="220.0" onAction="#btnCloseOnAction" prefHeight="25.0" prefWidth="72.0" styleClass="close-button" text="Close" textFill="#a8a8a8">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+   <stylesheets>
+      <URL value="@asserts/style/button.css" />
+      <URL value="@asserts/style/textField.css" />
+   </stylesheets>
+</AnchorPane>
